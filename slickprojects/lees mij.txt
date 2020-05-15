@@ -1,0 +1,1 @@
+Je javascript moet in de script.js file die in de js file zit. Je css in de style.css in de css folder. In de index zijn alle libraries javascript en css al gelinked.

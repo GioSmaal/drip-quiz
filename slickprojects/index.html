@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drip Test</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<h1>Hoeveel water verbruik jij tijdens het douchen?</h1>
+
+<form id ="test" name = "test">
+
+
+    <p>Hoe lang doucht u ongeveer?</p>
+    <input id = "mc" type = "radio" name = "question1" value = "4min"> 0-5 minuten <br>
+    <input id = "mc" type = "radio" name = "question1" value = "8min"> 6-10 minuten <br>
+    <input id = "mc" type = "radio" name = "question1" value = "13min"> 11-15 minuten <br>
+    <input id = "mc" type = "radio" name = "question1" value = "20min"> 16+ minuten <br>
+
+    <p>Laat u de douche eerst warm lopen?</p>
+    <input id = "mc" type = "radio" name = "question2" value = "Nee2"> Nee <br>
+    <input id = "mc" type = "radio" name = "question2" value = "2min"> Ja, 0-3 minuten <br>
+    <input id = "mc" type = "radio" name = "question2" value = "5min"> Ja, langer dan 3 minuten <br>
+
+    <p>Heeft u een waterbesparende douchekop?</p>
+    <input id = "mc" type = "radio" name = "question3" value = "Ja3"> Ja <br>
+    <input id = "mc" type = "radio" name = "question3" value = "Nee3"> Nee <br>
+
+    <p>Gaat u wel eens in bad in plaats van onder de douche?</p>
+    <input id = "mc" type = "radio" name = "question4" value = "Ja4"> Ja <br>
+    <input id = "mc" type = "radio" name = "question4" value = "Nee4"> Nee <br> <br>
+
+
+    <input id = "button" type = "button" value="Indienen" onclick="check()">
+
+</form> 
+
+<div class="thing" id="wrapper">
+	<div id=litersverbruikt>  <p id = "liters_verbruikt"></p>   </div>
+</div>
+	
+
+	<!-- hieronder worden alle libraries geladen en ook je javascript script, verander dus niks hieronder.-->
+ 	<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+ 	<script src="js/slick.js" type="text/javascript"></script>
+ 	<script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
