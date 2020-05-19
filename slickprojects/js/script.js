@@ -5,68 +5,65 @@ function check () {
     var question3 = document.test.question3.value;
     var question4 = document.test.question4.value;
     var literVerbruikt = 0;
-    var korterDouchen = "";
-    var KorterLopen = "";
-    var douchekop = "";
-    var geenBad = "";
+    var korterDouchen = "Probeer minder lang te douchen! De producten van Drip helpen u dit doel te bereiken.";
+    var KorterLopen = "Laat de douche minder lang te laten warm lopen. Een douche doet er maximaal 2 minuten over om warm te worden!";
+    var douchekop = "Schaf een waterbesparende douchekop aan! Deze verbuiken ongeveer 50% minder water vergeleken met een normale douchekop.";
+    var geenBad = "Minder vaak in bad te gaan! Een bad kost ongeveer 120 liter water.";
+    var q1 = $('.thing').slick('slickAdd', '<div><p>' + korterDouchen + '<p></div>' );
+    var q2 = $('.thing').slick('slickAdd', '<div><p>' + KorterLopen + '<p></div>' );
+    var q3 = $('.thing').slick('slickAdd', '<div><p>' + douchekop + '<p></div>' );
+    var q4 = $('.thing').slick('slickAdd', '<div><p>' + geenBad + '<p></div>' );
 
     document.getElementById("button").disabled = true;
 
+    //vraag 1
     if (question1 == "4min") {
         literVerbruikt = literVerbruikt + 40;
     }
+
     else if (question1 == "8min") {
         literVerbruikt = literVerbruikt + 80;
-        korterDouchen = "Probeer minder lang te douchen! De producten van Drip helpen u dit doel te bereiken."
+        q1;
     }
     else if (question1 == "13min") {
         literVerbruikt = literVerbruikt + 130;
-        korterDouchen = "Probeer minder lang te douchen! De producten van Drip helpen u dit doel te bereiken."
+        q1;
     }
     else if (question1 == "20min") {
         literVerbruikt = literVerbruikt + 200;
-        korterDouchen = "Probeer minder lang te douchen! De producten van Drip helpen u dit doel te bereiken."
+        q1;
     }
 
+    // vraag 2
     if (question2 == "2min") {
         literVerbruikt = literVerbruikt + 20;
     }
     else if (question2 == "5min") {
         literVerbruikt = literVerbruikt + 50;
-        KorterLopen = "Laat de douche minder lang te laten warm lopen. Een douche doet er maximaal 2 minuten over om warm te worden!"
+        q2;
     }
 
+    //vraag 3
     if (question3 == "Ja3") {
         literVerbruikt = literVerbruikt / 2;
     }
-    else if (question3 == "Nee3") {
-        douchekop = "Schaf een waterbesparende douchekop aan! Deze verbuiken ongeveer 50% minder water vergeleken met een normale douchekop."
+
+    if (question3 == "Nee3") {
+        q3; 
     }
-    
+
+    //vraag 4
     if (question4 == "Ja4") {
-        geenBad = "Minder vaak in bad te gaan! Een bad kost ongeveer 120 liter water."
+        q4;
     }
-    
+
+
     if (literVerbruikt > 0) {
         document.getElementById("wrapper").style.visibility = "visible";
         document.getElementById("liters_verbruikt").innerHTML = "U heeft " + literVerbruikt + " liter water verbruikt."
     }
-
-    if (question2 == "5min") {
-        $('.thing').slick('slickAdd', '<div><p>' + KorterLopen + '<p></div>' )
-    }
-
-    if (question1 == "8min" || question1 == "13min" || question1 == "20min" ) {
-        $('.thing').slick('slickAdd', '<div><p>' + korterDouchen + '<p></div>' )
-    }
     
-    if (question3 == "Nee3") {
-        $('.thing').slick('slickAdd', '<div><p>' + douchekop + '<p></div>' )
-    }
 
-    if (question4 == "Ja4") {
-        $('.thing').slick('slickAdd', '<div><p>' + geenBad + '<p></div>' )
-    }
 
     document.getElementById("KorterLopen").innerHTML = KorterLopen
     document.getElementById("korterDouchen").innerHTML = korterDouchen
