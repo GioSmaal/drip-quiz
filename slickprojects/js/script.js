@@ -9,10 +9,6 @@ function check () {
     var KorterLopen = "Laat de douche minder lang te laten warm lopen. Een douche doet er maximaal 2 minuten over om warm te worden!";
     var douchekop = "Schaf een waterbesparende douchekop aan! Deze verbuiken ongeveer 50% minder water vergeleken met een normale douchekop.";
     var geenBad = "Minder vaak in bad te gaan! Een bad kost ongeveer 120 liter water.";
-    var q1 = $('.thing').slick('slickAdd', '<div><p>' + korterDouchen + '<p></div>' );
-    var q2 = $('.thing').slick('slickAdd', '<div><p>' + KorterLopen + '<p></div>' );
-    var q3 = $('.thing').slick('slickAdd', '<div><p>' + douchekop + '<p></div>' );
-    var q4 = $('.thing').slick('slickAdd', '<div><p>' + geenBad + '<p></div>' );
 
     document.getElementById("button").disabled = true;
 
@@ -23,15 +19,15 @@ function check () {
 
     else if (question1 == "8min") {
         literVerbruikt = literVerbruikt + 80;
-        q1;
+        $('.thing').slick('slickAdd', '<div><p>' + korterDouchen + '<p></div>' );
     }
     else if (question1 == "13min") {
         literVerbruikt = literVerbruikt + 130;
-        q1;
+        $('.thing').slick('slickAdd', '<div><p>' + korterDouchen + '<p></div>' );
     }
     else if (question1 == "20min") {
         literVerbruikt = literVerbruikt + 200;
-        q1;
+        $('.thing').slick('slickAdd', '<div><p>' + korterDouchen + '<p></div>' );
     }
 
     // vraag 2
@@ -40,7 +36,7 @@ function check () {
     }
     else if (question2 == "5min") {
         literVerbruikt = literVerbruikt + 50;
-        q2;
+        $('.thing').slick('slickAdd', '<div><p>' + KorterLopen + '<p></div>' )
     }
 
     //vraag 3
@@ -49,21 +45,18 @@ function check () {
     }
 
     if (question3 == "Nee3") {
-        q3; 
+        $('.thing').slick('slickAdd', '<div><p>' + douchekop + '<p></div>' )
     }
 
     //vraag 4
     if (question4 == "Ja4") {
-        q4;
+        $('.thing').slick('slickAdd', '<div><p>' + geenBad + '<p></div>' )
     }
-
 
     if (literVerbruikt > 0) {
         document.getElementById("wrapper").style.visibility = "visible";
         document.getElementById("liters_verbruikt").innerHTML = "U heeft " + literVerbruikt + " liter water verbruikt."
     }
-    
-
 
     document.getElementById("KorterLopen").innerHTML = KorterLopen
     document.getElementById("korterDouchen").innerHTML = korterDouchen
@@ -76,6 +69,6 @@ $(document).ready(function () {
         		dots:true,
         		arrows:false,
         		autoplay:true,
-        		autoplaySpeed: 2000,
+        		autoplaySpeed: 2500,
         });
     })
